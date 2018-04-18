@@ -137,4 +137,57 @@ public class Lista
 		
 	return null;
     }
+	
+    public nodo binarySearch(int value, int lowerBound, int upperBound)
+    {
+	int middleElement = (lowerBound + upperBound)/2;
+	int tempId = get(middleElement).id;
+		
+	ñif(lowerBound == upperBound)
+	{
+            if(tempId == value)
+		return get(middleElement);
+            else
+		return null;
+	}else
+	{
+            if(tempId == value)
+		return get(middleElement);
+            else
+		if(value < tempId)
+                    return binarySearch(value, lowerBound, middleElement);
+		else
+                    return binarySearch(value,  middleElement + 1, upperBound);
+	} 
+    }
+    
+    public Lista quickSort(Lista unsorted)
+    {
+    	if(unsorted.length() <= 1)
+	    return unsorted;
+	else
+	{
+            nodo pivot = unsorted.head;
+            Lista less_sublist = new Lista();
+            Lista greater_sublist = new Lista();
+	    		
+	    nodo temp = unsorted.head.next; 
+	    while(temp != null)
+	    {
+	    	if(temp.id < pivot.id)
+                    less_sublist.insertAtEnd(temp.clone());
+	    	else
+                    greater_sublist.insertAtEnd(temp.clone());
+	    		
+	    	temp = temp.next;
+            }
+	    		
+	    less_sublist = quickSort(less_sublist);
+            greater_sublist = quickSort(greater_sublist);
+	    		
+	    pivot.next = greater_sublist.head;
+	    less_sublist.insertAtEnd(pivot);
+	    return less_sublist;
+	}
+    }
 }
