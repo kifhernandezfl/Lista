@@ -108,4 +108,33 @@ public class Lista
         toDelete = null;
         System.gc();
     }
+	
+    public int length() // tamaño de la lista
+    {
+	int counter = 0;
+	nodo temp = head;
+		
+	while(temp != null)
+	{
+            counter += 1;
+            temp = temp.next;
+	}
+		
+	return counter;
+    }
+    
+    public nodo get(int index)
+    {
+	if(index < this.length())
+	{
+            nodo temp = head;
+			
+            for(int i = 0; i < index; i++)
+		temp = temp.next;
+			
+            return temp;
+	}
+		
+	return null;
+    }
 }
