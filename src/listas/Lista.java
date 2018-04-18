@@ -190,4 +190,17 @@ public class Lista
 	    return less_sublist;
 	}
     }
+	
+    public void reverse()
+    {
+	Stack tempStack = new Stack();
+	nodo temp = head;
+		
+	while(temp != null)
+	{
+	    tempStack.Push(temp.clone());
+	    temp = temp.next;
+	}
+	head =  tempStack.head;
+    }
 }
