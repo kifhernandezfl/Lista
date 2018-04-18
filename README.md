@@ -14,3 +14,4 @@ Incluye:
 -get()
 -binarySearch()
 -quickSort()
+-reverse()
