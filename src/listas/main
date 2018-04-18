@@ -1,0 +1,20 @@
+public static void main(String[] args) 
+{
+    Lista grades = new Lista();
+    grades.insertAtBegin(new nodo("task1",3));
+	  grades.insertAtEnd(new nodo ("test1",0));
+	  grades.insertAtEnd(new nodo("testx",8));
+	  grades.insertAtIndex(new nodo("hola",2),3);
+	  grades.deleteAtIndex(2);
+    grades.deleteAtBegin();
+    grades.deleteAtEnd();
+    grades = grades.quickSort(grades);
+	  grades.printList();
+        
+    nodo search = grades.binarySearch(6, 0, grades.length() -1);
+		
+		if(search != null) 
+        System.out.println("Elemento encontrado: " + search.toString()); 
+    else
+        System.out.println("El elemento no se encuentra.")
+}
