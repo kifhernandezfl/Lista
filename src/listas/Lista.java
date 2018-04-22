@@ -143,7 +143,7 @@ public class Lista
 	int middleElement = (lowerBound + upperBound)/2;
 	int tempId = get(middleElement).id;
 		
-	ñif(lowerBound == upperBound)
+	if(lowerBound == upperBound)
 	{
             if(tempId == value)
 		return get(middleElement);
